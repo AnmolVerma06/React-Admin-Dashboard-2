@@ -67,21 +67,19 @@ A modern, feature-rich admin dashboard application built with **React** and **Vi
 
 ## 🛠️ Tech Stack
 
-| Tool              | Description                                  |
-|-------------------|----------------------------------------------|
-| SVG for Charts    | Lightweight chart rendering using inline SVG |
-| HTML Drag & Drop API | Used in Kanban board for reordering tasks |
-| React Calendar Logic | Custom implementation for rendering and managing calendar UI without external libraries |
+| Tool                  | Description                                                                  |
+|-----------------------|------------------------------------------------------------------------------|
+| React 18.2.0          | Component-based UI framework                                                 |
+| Vite 5.1.0            | Fast bundler with Hot Module Replacement (HMR)                               |
+| React Router 6.22     | SPA routing using `HashRouter` for static hosting                           |
+| LocalStorage API      | Client-side persistence across sessions                                     |
+| Pure CSS + Variables  | Styling with dynamic theme support (light/dark mode, color themes)           |
+| SVG for Charts        | Lightweight chart rendering using inline SVG                                 |
+| HTML Drag & Drop API  | Enables drag-and-drop functionality in Kanban board                         |
+| React Calendar Logic  | Custom implementation of calendar UI without third-party libraries          |
+| Custom SVG Icons      | Icon management using `/assets/icons` as React components or `<img>` tags   |
+| ESLint                | Code linting using standard React plugins                                   |
 
-|-------------------|----------------------------------------------|
-| React 18.2.0      | Component-based UI framework                 |
-| Vite 5.1.0        | Fast bundler with HMR                        |
-| React Router 6.22 | SPA routing with HashRouter                  |
-| CSS Variables     | Dynamic styling and theme switching          |
-| LocalStorage API  | Client-side persistence                      |
-| Pure CSS          | Styling (no third-party UI libraries)        |
-| Custom SVG Icons  | Icon management from `/assets/icons`         |
-| ESLint            | Code linting and style enforcement           |
 
 ---
 
