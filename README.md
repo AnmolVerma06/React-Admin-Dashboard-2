@@ -1,11 +1,19 @@
 
+# ⚠️ IMPORTANT NOTE
+
+**This React Admin Dashboard is made without any external third party library**
+
+---
+
+# 🌐 Live Demo
+
+👉 [Click here to try the live demo](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
+
+---
+
 # 🚀 React Admin Dashboard
 
-**⚠️ This React Admin Dashboard is made without any external third party library**
-
 A modern, feature-rich admin dashboard application built with **React** and **Vite**, designed to streamline key business operations like managing orders, customers, tasks, and more. It offers a responsive layout, light/dark mode, and customizable theme colors for a personalized user experience.
-
-[🌐 Live Demo](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
 
 ---
 
@@ -57,15 +65,14 @@ A modern, feature-rich admin dashboard application built with **React** and **Vi
 
 ---
 
-## 🌐 Live Demo
-
-👉 [Try it here](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
-
----
-
 ## 🛠️ Tech Stack
 
 | Tool              | Description                                  |
+|-------------------|----------------------------------------------|
+| SVG for Charts    | Lightweight chart rendering using inline SVG |
+| HTML Drag & Drop API | Used in Kanban board for reordering tasks |
+| React Calendar Logic | Custom implementation for rendering and managing calendar UI without external libraries |
+
 |-------------------|----------------------------------------------|
 | React 18.2.0      | Component-based UI framework                 |
 | Vite 5.1.0        | Fast bundler with HMR                        |
