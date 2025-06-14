@@ -29,38 +29,49 @@ A modern, feature-rich admin dashboard application built with **React** and **Vi
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
 ### 📊 Dashboard Overview
-- At-a-glance KPIs: Total Sales, Orders, Customers, Avg. Order Value
-- Interactive charts: Revenue, Sales Analytics, User Balances, Revenue History
+- Visual display of sales, orders, customers, and AOV
+- Percentage trends with arrows
+- SalesAnalytics, TotalRevenue, TopUsersBalances, RevenueHistory charts
 
 ### 🛒 Orders Management
 - Order list with ID, products, thumbnails, date, amount, status
 - Delete orders with localStorage sync
 - Color-coded status badges
+- Add Order button with localStorage support
+- Export order data to CSV
+- Search and sort orders table
 
 ### 👤 Customers Management
 - Customer profile info: name, phone, orders, balance, last order date
 - Status badges and delete option with persistence
+- Add Customer button with localStorage support
+- Export customer data to CSV
+- Search and sort customers table
 
-### 🗂️ Kanban Board
-- Columns: **To Do**, **In Progress**, **Completed**
-- Drag & drop tasks between columns
-- Each task shows title, description, due date, priority, and assigned users
-- Add and delete tasks with real-time updates
+### 📋 Kanban Board
+- Tasks in To Do, In Progress, Completed
+- Drag-and-drop using HTML Drag & Drop API
+- Task modal for adding with details like due date, priority, and assignment
+- Task deletion with UI & localStorage update
 
-### 📅 Calendar View
-- Placeholder for scheduling/events (extendable)
+### 📆 Calendar View
+- Custom-built calendar rendering using React logic
+- Create new event via form
+- Task colors vary based on assigned theme
+- List view showing all events in a single page
+- Add new theme and pick favorite colors from the color picker
 
-### 🌗 Theming & Personalization
-- **Dark Mode** toggle
-- 🎨 Multiple **theme color options** (Red, Blue, Green, Purple, Orange)
-- Theme managed using React Context API and CSS custom properties
+### 🎨 Theming
+- Light/Dark mode toggle using React Context + CSS variables
+- Theme color picker (e.g., red, blue, green, purple, orange)
 
 ### 📱 Responsive UI
 - Collapsible sidebar
 - Top navigation with theme controls, notifications, and profile
+- Notification dropdown menu
 
 ---
 
@@ -132,25 +143,6 @@ npm run build      # Build for production
 npm run preview    # Preview the production build
 npm run lint       # Lint code using ESLint
 ```
-
----
-
-## 🤝 Contributing
-
-Your contributions are welcome!
-
-1. Fork this repo
-2. Create a branch: `git checkout -b feature-xyz`
-3. Commit changes: `git commit -m 'Add feature xyz'`
-4. Push your branch: `git push origin feature-xyz`
-5. Create a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for more details.
 
 ---
 
