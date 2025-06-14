@@ -1,12 +1,156 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 React Admin Dashboard
 
-Currently, two official plugins are available:
+**⚠️ This React Admin Dashboard is made without any external third party library**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, feature-rich admin dashboard application built with **React** and **Vite**, designed to streamline key business operations like managing orders, customers, tasks, and more. It offers a responsive layout, light/dark mode, and customizable theme colors for a personalized user experience.
 
-## Expanding the ESLint configuration
+[🌐 Live Demo](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📌 Table of Contents
+
+- [Features](#-features)
+- [Live Demo](#-live-demo)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Folder Structure](#-folder-structure)
+- [Scripts](#-scripts)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## ✨ Features
+
+### 📊 Dashboard Overview
+- At-a-glance KPIs: Total Sales, Orders, Customers, Avg. Order Value
+- Interactive charts: Revenue, Sales Analytics, User Balances, Revenue History
+
+### 🛒 Orders Management
+- Order list with ID, products, thumbnails, date, amount, status
+- Delete orders with localStorage sync
+- Color-coded status badges
+
+### 👤 Customers Management
+- Customer profile info: name, phone, orders, balance, last order date
+- Status badges and delete option with persistence
+
+### 🗂️ Kanban Board
+- Columns: **To Do**, **In Progress**, **Completed**
+- Drag & drop tasks between columns
+- Each task shows title, description, due date, priority, and assigned users
+- Add and delete tasks with real-time updates
+
+### 📅 Calendar View
+- Placeholder for scheduling/events (extendable)
+
+### 🌗 Theming & Personalization
+- **Dark Mode** toggle
+- 🎨 Multiple **theme color options** (Red, Blue, Green, Purple, Orange)
+- Theme managed using React Context API and CSS custom properties
+
+### 📱 Responsive UI
+- Collapsible sidebar
+- Top navigation with theme controls, notifications, and profile
+
+---
+
+## 🌐 Live Demo
+
+👉 [Try it here](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool              | Description                                  |
+|-------------------|----------------------------------------------|
+| React 18.2.0      | Component-based UI framework                 |
+| Vite 5.1.0        | Fast bundler with HMR                        |
+| React Router 6.22 | SPA routing with HashRouter                  |
+| CSS Variables     | Dynamic styling and theme switching          |
+| LocalStorage API  | Client-side persistence                      |
+| Pure CSS          | Styling (no third-party UI libraries)        |
+| Custom SVG Icons  | Icon management from `/assets/icons`         |
+| ESLint            | Code linting and style enforcement           |
+
+---
+
+## 📦 Installation
+
+```bash
+# Clone this repository
+git clone https://github.com/AnmolVerma06/React-Admin-Dashboard-2.git
+
+# Navigate to the project folder
+cd React-Admin-Dashboard-2
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Then open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+---
+
+## 📁 Folder Structure
+
+```
+React-Admin-Dashboard-2/
+├── public/
+│   └── ...                    # Static assets
+├── src/
+│   ├── assets/                # Static images and icons
+│   ├── components/            # Reusable UI components
+│   ├── context/               # Theme provider logic
+│   ├── data/                  # Static data (mocked users/orders)
+│   ├── pages/                 # Pages: Dashboard, Orders, etc.
+│   ├── router/                # Routing configuration
+│   ├── styles/                # Component-specific CSS
+│   └── App.jsx                # App entry point
+├── .eslintrc.cjs              # ESLint rules
+├── vite.config.js             # Vite configuration
+└── package.json               # Project metadata and dependencies
+```
+
+---
+
+## 🧩 Scripts
+
+```bash
+npm run dev        # Start dev server
+npm run build      # Build for production
+npm run preview    # Preview the production build
+npm run lint       # Lint code using ESLint
+```
+
+---
+
+## 🤝 Contributing
+
+Your contributions are welcome!
+
+1. Fork this repo
+2. Create a branch: `git checkout -b feature-xyz`
+3. Commit changes: `git commit -m 'Add feature xyz'`
+4. Push your branch: `git push origin feature-xyz`
+5. Create a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 🙌 Developed By
+
+**Anmol Verma**  
+🔗 [GitHub Profile](https://github.com/AnmolVerma06)
