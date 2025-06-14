@@ -1,19 +1,18 @@
+# 🚀 React Admin Dashboard
 
-# ⚠️ IMPORTANT NOTE
+A modern, feature-rich admin dashboard application built with **React** and **Vite**, designed to streamline key business operations like managing orders, customers, tasks, and more. It offers a responsive layout, light/dark mode, and customizable theme colors for a personalized user experience.
+
+---
+
+## ⚠️ IMPORTANT NOTE
 
 **This React Admin Dashboard is made without any external third party library**
 
 ---
 
-# 🌐 Live Demo
+## 🌐 Live Demo
 
 👉 [Click here to try the live demo](https://anmolverma06.github.io/React-Admin-Dashboard-2/)
-
----
-
-# 🚀 React Admin Dashboard
-
-A modern, feature-rich admin dashboard application built with **React** and **Vite**, designed to streamline key business operations like managing orders, customers, tasks, and more. It offers a responsive layout, light/dark mode, and customizable theme colors for a personalized user experience.
 
 ---
 
