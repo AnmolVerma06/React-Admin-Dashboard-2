@@ -2,6 +2,35 @@ import React, { useState } from 'react';
 import './styles.css';
 import Icon from '../../components/Icon';
 
+// Import all user images
+import user1 from '../../assets/users/user-1.jpg';
+import user2 from '../../assets/users/user-2.jpg';
+import user3 from '../../assets/users/user-3.jpg';
+import user4 from '../../assets/users/user-4.jpg';
+import user5 from '../../assets/users/user-5.jpg';
+import user6 from '../../assets/users/user-6.jpg';
+import user7 from '../../assets/users/user-7.jpg';
+import user8 from '../../assets/users/user-8.jpg';
+import user9 from '../../assets/users/user-9.jpg';
+import user10 from '../../assets/users/user-10.jpg';
+import user11 from '../../assets/users/user-11.jpg';
+import user12 from '../../assets/users/user-12.jpg';
+
+const userImages = {
+  'user-1': user1,
+  'user-2': user2,
+  'user-3': user3,
+  'user-4': user4,
+  'user-5': user5,
+  'user-6': user6,
+  'user-7': user7,
+  'user-8': user8,
+  'user-9': user9,
+  'user-10': user10,
+  'user-11': user11,
+  'user-12': user12,
+};
+
 const initialTasksData = {
   todo: [
     {
@@ -321,7 +350,7 @@ const Kanban = () => {
               {(task.assignees || [task.assignee]).map((user, index) => (
                 <img
                   key={user}
-                  src={`/src/assets/users/${user}.jpg`}
+                  src={userImages[user]}
                   alt={user}
                   className="user-avatar"
                   style={{
@@ -446,7 +475,7 @@ const Kanban = () => {
                         onClick={() => handleUserSelection(userImageName)}
                       >
                         <img
-                          src={`/src/assets/users/${userImageName}.jpg`}
+                          src={userImages[userImageName]}
                           alt={userImageName}
                           className="user-avatar-select"
                         />
@@ -463,7 +492,7 @@ const Kanban = () => {
                         {newTask.users.map(user => (
                           <div key={user} className="selected-user-item">
                             <img
-                              src={`/src/assets/users/${user}.jpg`}
+                              src={userImages[user]}
                               alt={user}
                               className="user-avatar-select"
                             />
