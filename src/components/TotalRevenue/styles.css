@@ -1,0 +1,166 @@
+.total-revenue-card {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.total-revenue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-header h2 {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-header .icon {
+  stroke: #64748b;
+  cursor: pointer;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chart-container svg {
+  transition: transform 0.3s ease;
+}
+
+.total-revenue-card:hover .chart-container svg {
+  transform: scale(1.05);
+}
+
+.donut-background {
+  fill: none;
+  stroke: var(--border-color);
+}
+
+.donut-progress {
+  fill: none;
+  stroke: var(--primary-color);
+  transform-origin: center;
+  transform: rotate(-90deg);
+  animation: progress 1.5s ease-out forwards;
+}
+
+.revenue-text {
+  fill: var(--text-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.percentage-text {
+  fill: var(--primary-color);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.sales-today {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sales-today h3 {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+.sales-amount {
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.description {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.5;
+  max-width: 200px; /* Constrain description width */
+  margin: 0 auto;
+}
+
+.comparison-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-item:hover {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.metric-label {
+  color: var(--text-light-color);
+  font-size: 12px;
+}
+
+.metric-value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.metric-value.up {
+  color: #10b981;
+}
+
+.metric-value.down {
+  color: #ef4444;
+}
+
+.metric-value svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+}
+
+/* Dark mode styles */
+html[data-theme='dark'] .total-revenue-card {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .donut-background {
+  stroke: var(--border-color);
+}
+
+html[data-theme='dark'] .donut-progress {
+  stroke: var(--primary-color);
+}
+
+/* Animation */
+@keyframes progress {
+  from {
+    stroke-dashoffset: 439.82;
+  }
+  to {
+    stroke-dashoffset: var(--initial-dashoffset);
+  }
+} 

@@ -1,0 +1,767 @@
+.orders-page {
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.orders-header h2 {
+  font-size: 24px;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+}
+
+.orders-actions-right {
+  display: flex;
+  gap: 12px;
+}
+
+.orders-actions-right button {
+  padding: 10px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.orders-actions-right .add-new-order-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.orders-actions-right .add-new-order-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+.orders-actions-right .export-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.orders-actions-right .export-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+/* Table Container and Controls */
+.orders-table-container {
+  background-color: var(--card-background-color);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.orders-table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-color);
+  outline: none;
+  background-color: var(--background-color);
+  transition: border-color 0.2s ease;
+}
+
+.filter-group select:focus {
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .filter-group select {
+  background-color: var(--background-color-dark);
+  color: var(--text-color);
+  border-color: var(--border-color-dark);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: var(--background-color);
+  width: 280px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 14px;
+  margin-left: 10px;
+  flex-grow: 1;
+  color: var(--text-color);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .search-bar input {
+  background-color: var(--background-color-dark);
+  color: var(--text-color);
+  border-color: var(--border-color-dark);
+}
+
+html[data-theme='dark'] .search-bar input::placeholder {
+  color: var(--text-light-color-dark);
+}
+
+.search-bar svg {
+  color: var(--text-light-color);
+  width: 18px;
+  height: 18px;
+}
+
+/* Table Styling */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  table-layout: auto;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 16px;
+  
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.orders-table th:first-child,
+.orders-table td:first-child {
+  width: 40px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.orders-table th:last-child,
+.orders-table td:last-child {
+  width: 120px;
+  padding-right: 4px;
+  text-align: center;
+  
+}
+
+.orders-table th {
+  background-color: var(--background-color);
+  font-weight: 600;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.orders-table td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-images {
+  display: flex;
+  gap: 5px;
+}
+
+.product-thumb {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Payment Status Specific Styles */
+.status-badge.payment-failed {
+  background-color: #fce8e8;
+  color: #e03232;
+}
+
+.status-badge.unpaid {
+  background-color: #e0f2f7;
+  color: #2196f3;
+}
+
+.status-badge.paid {
+  background-color: #e6ffed;
+  color: #10b981;
+}
+
+.status-badge.awaiting-authorization {
+  background-color: #fff8e6;
+  color: #ff9800;
+}
+
+/* Order Status Specific Styles */
+.status-badge.processing {
+  background-color: #fffbe6;
+  color: #f5b041;
+}
+
+.status-badge.shipped {
+  background-color: #e0f2f7;
+  color: #2196f3;
+}
+
+.status-badge.delivered {
+  background-color: #e6ffed;
+  color: #10b981;
+}
+
+.status-badge.cancelled {
+  background-color: #fce8e8;
+  color: #e03232;
+}
+
+.status-badge.pending {
+  background-color: #fff8e6;
+  color: #ff9800;
+}
+
+.action-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-icons svg {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  color: var(--icon-color, #bbb);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.action-icons svg:hover {
+  transform: scale(1.15);
+  color: var(--primary-color);
+}
+
+.action-icons svg[name="trash"] {
+  color: #dc3545;
+}
+
+.action-icons svg[name="trash"]:hover {
+  color: #c82333;
+  transform: scale(1.15);
+}
+
+html[data-theme='dark'] .action-icons svg[name="trash"] {
+  color: #ff4d4d;
+}
+
+html[data-theme='dark'] .action-icons svg[name="trash"]:hover {
+  color: #ff3333;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding: 15px 20px;
+  background: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-info {
+  color: var(--text-color);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-info select,
+.page-info input[type="number"] {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-color);
+  outline: none;
+  background-color: var(--background-color);
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.pagination-buttons button {
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-background-color);
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+  background: var(--background-color);
+  border-color: var(--border-color);
+}
+
+.pagination-buttons button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pagination-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+} 
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-background-color);
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 95%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-light-color);
+}
+
+.modal-form .form-row {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-selection,
+.selected-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-item,
+.selected-product-item {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-item:hover {
+  border-color: #dc3545;
+}
+
+.product-item.selected {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.3);
+}
+
+.selected-products h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.modal-form .form-row label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.modal-form .form-row input,
+.modal-form .form-row select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.save-btn:hover {
+  background-color: var(--primary-color-darker);
+}
+
+.cancel-btn {
+  padding: 10px 18px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-table th {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-table td {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-table-container,
+html[data-theme='dark'] .orders-table-controls,
+html[data-theme='dark'] .pagination-controls {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-page,
+html[data-theme='dark'] .filter-group select,
+html[data-theme='dark'] .search-bar input,
+html[data-theme='dark'] .page-info select,
+html[data-theme='dark'] .page-info input[type="number"] {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .search-bar input::placeholder {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .orders-table th,
+html[data-theme='dark'] .orders-table td {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-table th {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .orders-table td {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .action-icons svg {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .action-icons svg:hover {
+  color: var(--primary-color);
+}
+
+html[data-theme='dark'] .page-info {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .page-info select,
+html[data-theme='dark'] .page-info input[type="number"] {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button {
+  background: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:hover:not(:disabled) {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:disabled {
+  background: var(--card-background-color);
+  color: var(--text-light-color);
+  border-color: var(--border-color);
+}
+
+/* Modal specific dark mode styles */
+html[data-theme='dark'] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme='dark'] .modal-content {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .modal-header h3 {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .close-btn {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .close-btn:hover {
+  color: var(--primary-color);
+}
+
+html[data-theme='dark'] .modal-form .form-row label {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .modal-form .form-row input,
+html[data-theme='dark'] .modal-form .form-row select,
+html[data-theme='dark'] .modal-form .form-row textarea {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .modal-form .form-row input::placeholder,
+html[data-theme='dark'] .modal-form .form-row textarea::placeholder {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .product-item.selected {
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .selected-products h4 {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .product-thumb {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .save-btn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+html[data-theme='dark'] .save-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .cancel-btn {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .cancel-btn:hover {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .orders-table th,
+html[data-theme='dark'] .orders-table td {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .orders-table th:last-child,
+html[data-theme='dark'] .orders-table td:last-child {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .orders-table tbody tr {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .orders-actions-right button {
+  /* Removed direct background-color and color here to rely on more specific rules below */
+}
+
+html[data-theme='dark'] .orders-actions-right .add-new-order-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .orders-actions-right .add-new-order-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .orders-actions-right .export-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .orders-actions-right .export-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .search-bar svg {
+  color: white;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.15);
+}
+
+.delete-btn svg {
+  color: #dc3545;
+  width: 20px;
+  height: 20px;
+}
+
+.delete-btn:hover svg {
+  color: #c82333;
+}
+
+html[data-theme='dark'] .delete-btn svg {
+  color: #ff4d4d;
+}
+
+html[data-theme='dark'] .delete-btn:hover svg {
+  color: #ff3333;
+}

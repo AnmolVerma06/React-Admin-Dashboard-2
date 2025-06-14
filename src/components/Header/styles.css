@@ -1,0 +1,600 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-left h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2px;
+}
+
+.date {
+  font-size: 13px;
+  color: #888;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-bar {
+  position: relative;
+  width: 200px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0a0a0;
+  transition: color 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 10px 15px 10px 42px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-color);
+  background: #fdfdfd;
+  transition: all 0.2s ease;
+}
+
+.search-bar input::placeholder {
+  color: #a0a0a0;
+  opacity: 1;
+  padding-left: 20px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #64748b; /* this sets stroke color via currentColor */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.icon-button:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none; /* or currentColor if your SVG uses fill */
+  display: block;
+}
+
+
+.icon-button:hover svg {
+  stroke: white;
+}
+
+.notification-button {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-avatar {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #64748b;
+  transition: all 0.3s ease;
+}
+
+.user-profile:hover .dropdown-icon {
+  transform: rotate(180deg);
+} 
+
+.settings-container {
+  position: relative;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 15px;
+  width: 220px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.settings-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Color Options */
+.color-options {
+  display: flex;
+  gap: 8px;
+}
+
+.color-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.color-box:hover {
+  transform: scale(1.1);
+}
+
+.color-box.selected {
+  border-color: #333; /* A contrasting border for selected color */
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Dark Mode Styles */
+html[data-theme='dark'] {
+  --background-color: #1a202c;
+  --card-background-color: #2d3748;
+  --text-color: #f8f8f8;
+  --text-light-color: #a0a0a0;
+  --border-color: #4a5568;
+}
+
+html[data-theme='dark'] .header,
+html[data-theme='dark'] .notification-menu,
+html[data-theme='dark'] .settings-menu,
+html[data-theme='dark'] .orders-table-container,
+html[data-theme='dark'] .kanban-column,
+html[data-theme='dark'] .modal-content {
+  background: var(--card-background-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme='dark'] .header-left h1,
+html[data-theme='dark'] .user-name,
+html[data-theme='dark'] .settings-option span,
+html[data-theme='dark'] .modal-header h3,
+html[data-theme='dark'] .modal-form label,
+html[data-theme='dark'] .column-header h3,
+html[data-theme='dark'] .task-title,
+html[data-theme='dark'] .task-description,
+html[data-theme='dark'] .priority-label,
+html[data-theme='dark'] .column-description,
+html[data-theme='dark'] .filter-group label,
+html[data-theme='dark'] .page-info,
+html[data-theme='dark'] .orders-table th,
+html[data-theme='dark'] .orders-table td,
+html[data-theme='dark'] .selected-products h4,
+html[data-theme='dark'] .modal-form input,
+html[data-theme='dark'] .modal-form select,
+html[data-theme='dark'] .modal-form textarea {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .search-bar input,
+html[data-theme='dark'] .filter-group select,
+html[data-theme='dark'] .page-info select,
+html[data-theme='dark'] .page-info input[type="number"] {
+  background-color: #3b4556;
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .search-bar input::placeholder,
+html[data-theme='dark'] .search-icon {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .icon-button {
+  background: var(--card-background-color);
+  border-color: var(--border-color);
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .icon-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+html[data-theme='dark'] .notification-menu-item,
+html[data-theme='dark'] .notification-menu-item:hover {
+  color: var(--text-color);
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .notification-menu-item:hover {
+  background-color: #3b4556;
+}
+
+html[data-theme='dark'] .user-avatar {
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .dropdown-icon {
+  stroke: var(--text-light-color);
+}
+
+html[data-theme='dark'] .orders-table th,
+html[data-theme='dark'] .orders-table td {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .status-badge.payment-failed {
+  background-color: #4a1919;
+  color: #ef4444;
+}
+
+html[data-theme='dark'] .status-badge.unpaid {
+  background-color: #1a3c4f;
+  color: #38bdf8;
+}
+
+html[data-theme='dark'] .status-badge.paid {
+  background-color: #114234;
+  color: #10b981;
+}
+
+html[data-theme='dark'] .status-badge.awaiting-authorization {
+  background-color: #4f3417;
+  color: #fbbf24;
+}
+
+html[data-theme='dark'] .status-badge.processing {
+  background-color: #4e3816;
+  color: #f59e0b;
+}
+
+html[data-theme='dark'] .status-badge.shipped {
+  background-color: #1a3c4f;
+  color: #38bdf8;
+}
+
+html[data-theme='dark'] .status-badge.delivered {
+  background-color: #114234;
+  color: #10b981;
+}
+
+html[data-theme='dark'] .action-icons svg {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .pagination-controls {
+  background: var(--card-background-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme='dark'] .pagination-buttons button {
+  background: var(--card-background-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:hover:not(:disabled) {
+  background: #3b4556;
+  border-color: #64748b;
+}
+
+html[data-theme='dark'] .pagination-buttons button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:disabled {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+html[data-theme='dark'] .close-btn {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .product-item,
+html[data-theme='dark'] .selected-product-item,
+html[data-theme='dark'] .user-item {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .product-item:hover,
+html[data-theme='dark'] .user-item:hover {
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .task-card {
+  background-color: #3b4556;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='dark'] .task-footer {
+  border-top-color: var(--border-color);
+}
+
+html[data-theme='dark'] .task-checkbox {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .task-checkbox:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .add-new-button,
+html[data-theme='dark'] .save-btn {
+  background-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .add-new-button:hover,
+html[data-theme='dark'] .save-btn:hover {
+  background-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .cancel-btn {
+  background-color: #3b4556;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+html[data-theme='dark'] .cancel-btn:hover {
+  background-color: #4a5568;
+}
+
+html[data-theme='dark'] .kanban-column.drag-over {
+  border-color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.3);
+}
+
+html[data-theme='dark'] .calendar-event {
+  background-color: #3b4556 !important;
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .calendar-day .day-number,
+html[data-theme='dark'] .calendar-weekdays .weekday-name,
+html[data-theme='dark'] .calendar-controls button,
+html[data-theme='dark'] .calendar-controls h3 {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .calendar-grid-container,
+html[data-theme='dark'] .calendar-list-view {
+  background-color: var(--card-background-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme='dark'] .calendar-day {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .calendar-controls button {
+  border-color: var(--border-color);
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .calendar-controls button:hover {
+  background-color: #3b4556;
+}
+
+html[data-theme='dark'] .calendar-controls button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .calendar-event.list-item {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .date-group .date-header {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .no-events {
+  color: var(--text-light-color);
+}
+
+.user-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 15px;
+  width: 200px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid var(--border-color);
+}
+
+.welcome-text {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-menu-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.user-menu-item .icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+}
+
+html[data-theme='dark'] .settings-menu,
+html[data-theme='dark'] .user-menu {
+  background: var(--card-background-color);
+  border-color: var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+html[data-theme='dark'] .welcome-text {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .user-menu-item {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .user-menu-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}

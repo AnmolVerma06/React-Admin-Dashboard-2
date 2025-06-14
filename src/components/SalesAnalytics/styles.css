@@ -1,0 +1,313 @@
+.sales-chart {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.sales-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sales-chart-header h2 {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.chart-button {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-button:hover {
+  background-color: var(--background-color);
+}
+
+.chart-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.chart-icons {
+  display: flex;
+  gap: 4px;
+  margin-left: 16px;
+}
+
+.chart-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chart-icon:hover {
+  stroke: var(--primary-color);
+}
+
+.chart-placeholder {
+  width: 100%;
+  height: calc(100% - 100px);
+  overflow: hidden;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dark mode styles */
+html[data-theme='dark'] .sales-chart {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .chart-button {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .chart-button:hover {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .chart-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Chart elements */
+.bar-animate {
+  transition: fill 0.3s ease;
+}
+
+.bar-animate.highlighted {
+  fill: var(--primary-color);
+}
+
+.line-animate {
+  transition: stroke 0.3s ease;
+}
+
+.point-animate {
+  transition: fill 0.3s ease;
+}
+
+.point-animate.highlighted {
+  fill: var(--primary-color);
+}
+
+.chart-tooltip {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.tooltip-date {
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tooltip-item {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot.revenue {
+  background-color: var(--primary-color);
+}
+
+.dot.sales {
+  background-color: #6366f1;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-color.revenue {
+  background-color: var(--primary-color);
+}
+
+.legend-color.sales {
+  background-color: #6366f1;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.chart-tooltip {
+  animation: fadeIn 0.2s ease;
+}
+
+.hover-line {
+  animation: fadeIn 0.2s ease;
+}
+
+/* Highlighting for bars and points */
+.bar-animate.highlighted {
+  fill: #6EE7B7; /* Lighter shade of green for highlight */
+  stroke: #10B981; /* Add a subtle border */
+  stroke-width: 2px;
+}
+
+.sales-point.highlighted {
+  stroke: #4338CA; /* Darker shade of blue for highlight */
+  stroke-width: 2px;
+  r: 5px; /* Slightly larger radius */
+}
+
+/* Hover line style */
+.hover-line {
+  stroke: #cbd5e1;
+  stroke-dasharray: 4 4;
+}
+
+/* Tooltip/Popup styles */
+.tooltip-container {
+  overflow: visible !important; /* Ensure content is not clipped by foreignObject */
+}
+
+/* Hide revenue labels by default */
+.revenue-label {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show revenue labels on hover of the bar */
+rect.bar-animate:hover + .revenue-label {
+  opacity: 1;
+}
+
+/* Hide sales labels by default */
+.sales-label {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show sales labels on hover of the point */
+.sales-point:hover + .sales-label {
+  opacity: 1;
+}
+
+.bar-animate {
+  animation: barGrow 1s ease-out forwards;
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.line-animate {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.point-animate {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 2s;
+}
+
+.label-animate {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.revenue {
+  background: #4ade80;
+}
+
+.legend-color.sales {
+  background: #6366f1;
+} 

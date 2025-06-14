@@ -1,0 +1,707 @@
+.customers-page {
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.customers-header h2 {
+  font-size: 24px;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+}
+
+.customers-actions-right {
+  display: flex;
+  gap: 12px;
+}
+
+.customers-actions-right button {
+  padding: 10px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-customer-btn,
+.import-btn,
+.export-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.add-customer-btn:hover,
+.import-btn:hover,
+.export-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+.settings-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  padding: 10px;
+}
+
+.settings-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+.customers-table-container {
+  background-color: var(--card-background-color);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.customers-table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: var(--background-color);
+  width: 280px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 14px;
+  margin-left: 10px;
+  flex-grow: 1;
+  color: var(--text-color);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-light-color);
+}
+
+.search-bar svg {
+  color: var(--text-light-color);
+  width: 20px;
+  height: 20px;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  table-layout: auto;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 14px 18px;
+  border-bottom: none;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customers-table th:first-child,
+.customers-table td:first-child {
+  width: 40px;
+  min-width: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.customers-table th:last-child,
+.customers-table td:last-child {
+  width: 120px;
+  min-width: 120px;
+  padding-right: 18px;
+  text-align: center;
+}
+
+.customers-table td:last-child {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.customers-table th {
+  background-color: var(--background-color);
+  font-weight: 600;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.customers-table td:not(:first-child):not(:last-child) {
+  width: auto;
+  min-width: 100px;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.active {
+  background-color: #e6ffed;
+  color: #10b981;
+}
+
+.status-badge.inactive {
+  background-color: #fff0e6;
+  color: #ff7f50;
+}
+
+.action-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-icons svg {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  color: var(--icon-color, #bbb);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.action-icons svg:hover {
+  transform: scale(1.15);
+  color: var(--primary-color);
+}
+
+.action-icons svg[name="trash"] {
+  color: #dc3545;
+}
+
+.action-icons svg[name="trash"]:hover {
+  color: #c82333;
+  transform: scale(1.15);
+}
+
+html[data-theme='dark'] .action-icons svg[name="trash"] {
+  color: #ff4d4d;
+}
+
+html[data-theme='dark'] .action-icons svg[name="trash"]:hover {
+  color: #ff3333;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding: 15px 20px;
+  background: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-info {
+  color: var(--text-color);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-info select,
+.page-info input[type="number"] {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-color);
+  outline: none;
+  background-color: var(--background-color);
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.pagination-buttons button {
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-background-color);
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+  background: var(--background-color);
+  border-color: var(--border-color);
+}
+
+.pagination-buttons button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pagination-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
+/* Add Customer Form Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.add-customer-form-container {
+  background: var(--card-background-color);
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.add-customer-form-container h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.add-customer-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for fields */
+  gap: 20px 30px; /* Added horizontal gap */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.form-actions .add-btn,
+.form-actions .cancel-btn {
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.form-actions .add-btn:hover {
+  background-color: var(--primary-color-darker);
+}
+
+.form-actions .cancel-btn {
+  padding: 10px 18px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.form-actions .cancel-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Animation for modal */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode specific overrides for status badges */
+html[data-theme='dark'] .status-badge.active {
+  background-color: #114234; /* Darker green */
+  color: #10b981; /* Original green text */
+}
+
+html[data-theme='dark'] .status-badge.inactive {
+  background-color: #4f3417; /* Darker orange */
+  color: #ff7f50; /* Original orange text */
+}
+
+html[data-theme='dark'] .customers-table th {
+  background-color: var(--card-background-color); /* Darker background for header in dark mode */
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .customers-table td {
+  background-color: var(--background-color); /* Ensure td has a distinct background in dark mode */
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .customers-page {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .customers-header h2 {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .customers-actions-right button {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .customers-actions-right button:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .add-customer-btn,
+html[data-theme='dark'] .import-btn,
+html[data-theme='dark'] .export-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .add-customer-btn:hover,
+html[data-theme='dark'] .import-btn:hover,
+html[data-theme='dark'] .export-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .customers-actions-right button svg {
+  fill: white;
+  stroke: white;
+}
+
+html[data-theme='dark'] .settings-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .settings-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .customers-table-container,
+html[data-theme='dark'] .customers-table-controls {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .search-bar {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .search-bar input {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .search-bar input::placeholder {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .search-bar svg {
+  color: white;
+  fill: white;
+  stroke: white;
+}
+
+html[data-theme='dark'] .customers-table th,
+html[data-theme='dark'] .customers-table td {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .customers-table th {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .customers-table td {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .profile-pic {
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .status-badge.active {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+html[data-theme='dark'] .status-badge.inactive {
+  background-color: rgba(255, 127, 80, 0.2);
+  color: #ff7f50;
+}
+
+html[data-theme='dark'] .action-icons svg {
+  fill: white;
+  stroke: white;
+}
+
+html[data-theme='dark'] .action-icons svg:hover {
+  color: var(--primary-color);
+}
+
+html[data-theme='dark'] .pagination-controls {
+  background: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .page-info {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .page-info select,
+html[data-theme='dark'] .page-info input[type="number"] {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button {
+  background: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:hover:not(:disabled) {
+  background-color: var(--background-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .pagination-buttons button:disabled {
+  background: var(--card-background-color);
+  color: var(--text-light-color);
+  border-color: var(--border-color);
+}
+
+/* Modal specific dark mode styles */
+html[data-theme='dark'] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme='dark'] .add-customer-form-container {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .add-customer-form-container h3 {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .close-btn {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .close-btn:hover {
+  color: var(--primary-color);
+}
+
+html[data-theme='dark'] .form-group label {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .form-group input,
+html[data-theme='dark'] .form-group select,
+html[data-theme='dark'] .form-group textarea {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .form-group input::placeholder,
+html[data-theme='dark'] .form-group textarea::placeholder {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] .form-actions .add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .form-actions .add-btn:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+}
+
+html[data-theme='dark'] .form-actions .cancel-btn {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .form-actions .cancel-btn:hover {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .customers-table th,
+html[data-theme='dark'] .customers-table td {
+  background-color: var(--card-background-color);
+  border-color: var(--border-color);
+}
+
+html[data-theme='dark'] .customers-table th:last-child,
+html[data-theme='dark'] .customers-table td:last-child {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] .customers-table tbody tr {
+  background-color: var(--card-background-color);
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.15);
+}
+
+.delete-btn svg {
+  color: #dc3545;
+  width: 20px;
+  height: 20px;
+}
+
+.delete-btn:hover svg {
+  color: #c82333;
+}
+
+html[data-theme='dark'] .delete-btn svg {
+  color: #ff4d4d;
+}
+
+html[data-theme='dark'] .delete-btn:hover svg {
+  color: #ff3333;
+}

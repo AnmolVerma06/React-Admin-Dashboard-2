@@ -1,0 +1,131 @@
+.top-users-balances-card {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu-icon {
+  color: var(--text-light-color);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  color: var(--text-light-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  padding: 12px 16px;
+  color: var(--text-color);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.member-since {
+  color: var(--text-light-color);
+  font-size: 12px;
+}
+
+.currency-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-color);
+}
+
+.currency-symbol {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.scroll-indicator {
+  margin-top: 16px;
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scroll-bar {
+  width: 30%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  animation: scroll 2s ease-in-out infinite;
+}
+
+/* Dark mode styles */
+html[data-theme='dark'] .top-users-balances-card {
+  background-color: var(--card-background-color);
+}
+
+html[data-theme='dark'] th {
+  color: var(--text-light-color);
+}
+
+html[data-theme='dark'] td {
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .member-since {
+  color: var(--text-light-color);
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+} 
