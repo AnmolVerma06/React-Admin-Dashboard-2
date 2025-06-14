@@ -34,7 +34,7 @@ A modern, feature-rich admin dashboard application built with **React** and **Vi
 ### 📊 Dashboard Overview
 - Visual display of sales, orders, customers, and AOV
 - Percentage trends with arrows
-- SalesAnalytics, TotalRevenue, TopUsersBalances, RevenueHistory charts
+- SalesAnalytics, TotalRevenue, TopUsersBalances, RevenueHistory charts and tables
 
 ### 🛒 Orders Management
 - Order list with ID, products, thumbnails, date, amount, status
@@ -69,7 +69,6 @@ A modern, feature-rich admin dashboard application built with **React** and **Vi
 - Theme color picker (e.g., red, blue, green, purple, orange)
 
 ### 📱 Responsive UI
-- Collapsible sidebar
 - Top navigation with theme controls, notifications, and profile
 - Notification dropdown menu
 
